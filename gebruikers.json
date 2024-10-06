@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "naam": "John Doe",
+    "email": "john.doe@example.com",
+    "uitgaven": [
+      {
+        "id": 101,
+        "beschrijving": "Boodschappen",
+        "bedrag": 50.75,
+        "datum": "2024-10-05T14:30:00",
+        "valuta": "EUR",
+        "betaalmethode": {
+          "methode": "Creditcard",
+          "kaartDetails": {
+            "nummer": "**** **** **** 1234",
+            "vervaldatum": "12/25"
+          }
+        },
+        "inkomend": false,
+        "categorie": "eten",
+        "tags": ["supermarkt", "maandelijks"],
+        "betaald": true
+      }
+    ],
+    "budget": {
+      "maandlimiet": 1000.0,
+      "notificatieDrempel": 0.9,
+      "actief": true
+    }
+  }
+]
