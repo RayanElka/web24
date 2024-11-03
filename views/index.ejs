@@ -1,0 +1,72 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gebruikers Uitgaven</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h1>Overzicht van Uitgaven</h1>
+
+    <ul>
+      <% gebruikers.forEach(gebruiker => { %>
+      <li>
+        <h2><%= gebruiker.naam %></h2>
+        <ul>
+          <% gebruiker.uitgaven.forEach(uitgave => { %>
+          <li>
+            <strong><%= uitgave.beschrijving %></strong> - <%= uitgave.bedrag %>
+            <%= uitgave.valuta %> - <%= uitgave.datum %>
+          </li>
+          <% }); %>
+        </ul>
+      </li>
+      <% }); %>
+    </ul>
+
+    <h2>Nieuwe Uitgave Toevoegen</h2>
+    <form action="/uitgaven/toevoegen" method="POST">
+      <input
+        type="number"
+        name="gebruikerId"
+        placeholder="Gebruikers-ID"
+        required
+      /><br />
+      <input
+        type="text"
+        name="beschrijving"
+        placeholder="Beschrijving"
+        required
+      /><br />
+      <input
+        type="number"
+        name="bedrag"
+        step="0.01"
+        placeholder="Bedrag"
+        required
+      /><br />
+      <input type="text" name="valuta" placeholder="Valuta" required /><br />
+      <input
+        type="text"
+        name="methode"
+        placeholder="Betaalmethode"
+        required
+      /><br />
+      <input
+        type="text"
+        name="categorie"
+        placeholder="Categorie"
+        required
+      /><br />
+      <input
+        type="text"
+        name="tags"
+        placeholder="Tags (gescheiden door komma's)"
+      /><br />
+      <label><input type="checkbox" name="betaald" /> Betaald</label><br />
+      <button type="submit">Uitgave Toevoegen</button>
+    </form>
+  </body>
+</html>

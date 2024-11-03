@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+  background-color: beige;
+}
+
+h1,
+h2 {
+  color: #333;
+}
+
+form {
+  margin-top: 20px;
+}
+
+input,
+button {
+  padding: 8px;
+  padding-right: 131px;
+  margin: 5px 0;
+}
+
+button {
+  cursor: pointer;
+}
