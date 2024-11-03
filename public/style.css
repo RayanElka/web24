@@ -3,6 +3,7 @@ body {
   max-width: 800px;
   margin: auto;
   background-color: beige;
+  padding: 20px;
 }
 
 h1,
@@ -17,10 +18,41 @@ form {
 input,
 button {
   padding: 8px;
-  padding-right: 131px;
   margin: 5px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 button {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  form {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  input,
+  button {
+    font-size: 0.9em;
+    padding: 6px;
+  }
 }
